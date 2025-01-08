@@ -3,6 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 import { assets } from '../assets/assets';
 import Title from '../components/Title.jsx';
 import ProductItem from '../components/ProductItem.jsx';
+import { useLocation } from 'react-router-dom';
 
 const Collection = ({ initialCategory, title }) => {
   const { products, search, showSearch } = useContext(ShopContext);
@@ -11,6 +12,8 @@ const Collection = ({ initialCategory, title }) => {
   const [category, setcategory] = useState(initialCategory ? [initialCategory] : []);
   const [subCategory, setsubCategory] = useState([]);
   const [sortType, setsortType] = useState('relavent');
+  const location = useLocation();  // Add this
+
 
   // toggling the category 
   const toggleCategory = (e) => {
@@ -68,6 +71,10 @@ const Collection = ({ initialCategory, title }) => {
         break;
     }
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     applyFilter();

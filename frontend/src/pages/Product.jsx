@@ -23,6 +23,10 @@ const Product = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [productId]);
+
+  useEffect(() => {
     fetchProductData();
   }, [productId, products]);
 
@@ -42,7 +46,7 @@ const Product = () => {
                   src={item}
                   key={index}
                   className={`w-20 h-20 object-cover cursor-pointer rounded-lg 
-                    ${image === item ? 'ring-1 ring-orange-500' : ''}`}
+                    ${image === item ? 'ring-1 m-1 ring-orange-500' : ''}`}
                   alt={`Product view ${index + 1}`}
                 />
               ))}
@@ -168,7 +172,11 @@ const Product = () => {
       </div>
 
       {/* display related products */}
-      <RelatedProduct category={productData.category} subCategory={productData.subCategory}/>
+      <RelatedProduct 
+  category={productData.category} 
+  subCategory={productData.subCategory} 
+  currentProductId={productData._id} 
+/>
     </div>
   );
 };

@@ -1,19 +1,39 @@
-import React, { useContext } from 'react'
-import { ShopContext } from '../context/ShopContext'
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { ShopContext } from '../context/ShopContext';
+import { useNavigate } from 'react-router-dom';
 
-const ProductItem = ({id,image,name,price}) => {
+const ProductItem = ({ id, image, name, price }) => {
+  const { currency } = useContext(ShopContext);
+  const navigate = useNavigate();
 
-    const {currency} = useContext(ShopContext);
+  const handleClick = (e) => {
+    e.preventDefault();
+    const scrollPosition = window.scrollX;
+    navigate(`/product/${id}`, {
+      state: { 
+        fromCollection: true,
+        scrollPosition 
+      }
+    });
+  };
+
   return (
-    <Link className='text-gray-700 cursor-pointer' to={`/product/${id}`}>
-        <div className='overflow-hidden'>
-        <img className='hover:scale-110 transition ease-in-out' src={image[0]} alt="" />
+    <a 
+      className='text-gray-700 cursor-pointer' 
+      href={`/product/${id}`} 
+      onClick={handleClick}
+    >
+      <div className='overflow-hidden'>
+        <img 
+          className='hover:scale-110 transition ease-in-out' 
+          src={image[0]} 
+          alt={name} 
+        />
         <p className='pt-3 pb-1 text-sm'>{name}</p>
         <p className='text-sm font-medium'>{currency}{price}</p>
-        </div>
-    </Link>
-  )
-}
+      </div>
+    </a>
+  );
+};
 
-export default ProductItem
+export default ProductItem;
