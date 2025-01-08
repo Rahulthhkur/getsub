@@ -53,6 +53,10 @@ import p_img49 from './p_img49.png'
 import p_img50 from './p_img50.png'
 import p_img51 from './p_img51.png'
 import p_img52 from './p_img52.png'
+import p_img53 from './p_img53.png'
+import p_img54 from './p_img54.png'
+import ts1 from "./ts1.png"
+import ts2 from "./ts2.png"
 
 
 import logo from './logo.png'
@@ -73,6 +77,8 @@ import contact_img from './contact_img.png'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
+import swatch from './swatch.png'
+import newsl from './newsl.png'
 
 export const assets = {
     logo,
@@ -92,7 +98,9 @@ export const assets = {
     contact_img,
     razorpay_logo,
     stripe_logo,
-    cross_icon
+    cross_icon,
+    swatch,
+    ts1,ts2,newsl
 }
 
 export const products = [
@@ -714,6 +722,30 @@ export const products = [
         price: 350,
         image: [p_img52],
         category: "Men",
+        subCategory: "Winterwear",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716668445448,
+        bestseller: false
+    },
+    {
+        _id: "aaabz",
+        name: "AIRPODS MAX",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        price: 350,
+        image: [p_img53],
+        category: "Headphones",
+        subCategory: "Winterwear",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716668445448,
+        bestseller: true
+    },
+    {
+        _id: "aaabz",
+        name: "Ultra 2 WATCH",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        price: 350,
+        image: [p_img54],
+        category: "Smartwatch",
         subCategory: "Winterwear",
         sizes: ["S", "M", "L", "XL"],
         date: 1716668445448,

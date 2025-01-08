@@ -11,15 +11,23 @@ import Order from './pages/Order'
 import PlaceOrder from './pages/PlaceOrder'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Shop from './pages/Shop';
+import Smartwatches from './pages/Smartwatches';
+import Headphones from './pages/Headphones';
+import SearchBar from './components/SearchBar';
 
 
 const App = () => {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px[9vw]'>
       <Navbar/>
+      <SearchBar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/collection' element= {<Collection/>}/>
+        <Route path='/shop' element= {<Shop/>}/>
+        <Route path='/shop/smart-watches' element= {<Smartwatches/>}/>
+        <Route path='/shop/headphones' element= {<Headphones/>}/>
         <Route path='/about' element= {<About/>}/>
         <Route path='/contact' element= {<Contact/>}/>
         <Route path='/product/:productId' element= {<Product/>}/>
