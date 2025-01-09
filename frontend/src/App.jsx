@@ -15,13 +15,17 @@ import Shop from './pages/Shop';
 import Smartwatches from './pages/Smartwatches';
 import Headphones from './pages/Headphones';
 import SearchBar from './components/SearchBar';
+import { Toaster } from 'react-hot-toast';
+
 
 const App = () => {
   
 return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px[9vw]'>
+      
       <Navbar/>
       <SearchBar/>
+      <Toaster/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/collection' element={<Collection/>}/>
