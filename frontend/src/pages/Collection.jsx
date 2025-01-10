@@ -4,6 +4,7 @@ import { assets } from '../assets/assets';
 import Title from '../components/Title.jsx';
 import ProductItem from '../components/ProductItem.jsx';
 import { useLocation } from 'react-router-dom';
+import { Filter, SlidersHorizontal } from 'lucide-react';
 
 const Collection = ({ initialCategory, title }) => {
   const { products, search, showSearch } = useContext(ShopContext);
@@ -87,64 +88,111 @@ const Collection = ({ initialCategory, title }) => {
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
       {/* Filter options */}
-      <div className='min-w-60'>
-        {!initialCategory && (
-          <>
-            <p onClick={() => setShowFilter(!showFilter)} className='my-2 text-xl flex items-center cursor-pointer gap-2'>
-              FILTERS
-              <img className={`h-3 sm:hidden ${showFilter ? 'rotate-90' : ''}`} src={assets.dropdown_icon} alt="" />
-            </p>
-            {/* Category Filter */}
-            <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}>
-              <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
-              <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-                <p className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Smartwatch'} onChange={toggleCategory} checked={category.includes('Smartwatch')} />
-                  Smart Watch
-                </p>
-                <p className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Headphones'} onChange={toggleCategory} />
-                  Headphones
-                </p>
-                <p className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory} />
-                  Kids
-                </p>
-              </div>
-            </div>
-          </>
-        )}
-        {/* Sub Category Filter */}
-        <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '' : 'hidden'} sm:block`}>
-          <p className='mb-3 text-sm font-medium'>TYPE</p>
-          <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory} />
-              Topwear
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory} />
-              Bottomwear
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory} />
-              Winterwear
-            </p>
-          </div>
+      <div className='min-w-60 bg-white rounded-lg'>
+  {!initialCategory && (
+    <>
+      <p onClick={() => setShowFilter(!showFilter)} 
+         className='my-2 text-xl flex items-center justify-between cursor-pointer gap-2 font-medium hover:text-blue-600 transition-colors p-2 rounded-lg hover:bg-gray-50'>
+        <span className="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M3 6h18M6 12h12m-9 6h6" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          FILTERS
+        </span>
+        <img className={`h-3 sm:hidden transition-transform duration-200 ${showFilter ? 'rotate-90' : ''}`} 
+             src={assets.dropdown_icon} 
+             alt="" />
+      </p>
+      {/* Category Filter */}
+      <div className={`border border-gray-200 rounded-lg shadow-sm pl-5 py-3 mt-6 hover:border-gray-300 transition-colors ${showFilter ? '' : 'hidden'} sm:block`}>
+        <p className='mb-3 text-sm font-medium text-gray-800 uppercase tracking-wide'>
+          <span className="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M3 7h18M3 12h18M3 17h18" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            CATEGORIES
+          </span>
+        </p>
+        <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
+          <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
+            <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
+                   type="checkbox" 
+                   value={'Smartwatch'} 
+                   onChange={toggleCategory} 
+                   checked={category.includes('Smartwatch')} />
+            Smart Watch
+          </label>
+          <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
+            <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
+                   type="checkbox" 
+                   value={'Headphones'} 
+                   onChange={toggleCategory} />
+            Headphones
+          </label>
+          <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
+            <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
+                   type="checkbox" 
+                   value={'Kids'} 
+                   onChange={toggleCategory} />
+            Kids
+          </label>
         </div>
       </div>
+    </>
+  )}
+  {/* Sub Category Filter */}
+  <div className={`border border-gray-200 rounded-lg shadow-sm pl-5 py-3 my-5 hover:border-gray-300 transition-colors ${showFilter ? '' : 'hidden'} sm:block`}>
+    <p className='mb-3 text-sm font-medium text-gray-800 uppercase tracking-wide'>
+      <span className="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M3 7h18M3 12h18M3 17h18" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        TYPE
+      </span>
+    </p>
+    <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
+      <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
+        <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
+               type="checkbox" 
+               value={'Topwear'} 
+               onChange={toggleSubCategory} />
+        Topwear
+      </label>
+      <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
+        <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
+               type="checkbox" 
+               value={'Bottomwear'} 
+               onChange={toggleSubCategory} />
+        Bottomwear
+      </label>
+      <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
+        <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
+               type="checkbox" 
+               value={'Winterwear'} 
+               onChange={toggleSubCategory} />
+        Winterwear
+      </label>
+    </div>
+  </div>
+</div>
 
       {/* Right Side */}
       <div className='flex-1'>
-        <div className='flex justify-between text-base sm:text-2xl mb-4'>
-          <Title text1={title ? title.text1 : 'ALL'} text2={title ? title.text2 : 'COLLECTIONS'} />
-          {/* Product Sort */}
-          <select onChange={(e) => setsortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2'>
-            <option value="relavent">Sort by: Relavent</option>
-            <option value="low-high">Sort by: Low to High</option>
-            <option value="high-low">Sort by: High to Low</option>
-          </select>
-        </div>
+          <div className='flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6'>
+            <Title text1={title ? title.text1 : 'ALL'} text2={title ? title.text2 : 'COLLECTIONS'} />
+            
+            <div className='flex items-center gap-2'>
+              <SlidersHorizontal size={20} className="text-gray-500" />
+              <select 
+                onChange={(e) => setsortType(e.target.value)} 
+                className='bg-white border rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer'
+              >
+                <option value="relavent">Sort by: Relevant</option>
+                <option value="low-high">Price: Low to High</option>
+                <option value="high-low">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
 
         {/* Map Products */}
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6 '>

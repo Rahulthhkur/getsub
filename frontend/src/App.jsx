@@ -38,7 +38,7 @@ return (
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/place-order' element={<PlaceOrder/>}/>
-        <Route path='/orders' element={<Order/>}/>
+        <Route path='/order' element={<Order/>}/>
       </Routes>
       <Footer/>
     </div>

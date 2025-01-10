@@ -24,7 +24,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Menu */}
-            <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
+            <ul className='hidden sm:flex gap-5 text-base text-gray-700'>
                 <NavLink to='/' className='flex flex-col items-center gap-1'>
                     <p>Home</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
@@ -49,11 +49,11 @@ const Navbar = () => {
                         ))}
                     </div>
                 </div>
-
+{/* 
                 <NavLink to='/collection' className='flex flex-col items-center gap-1'>
                     <p>Collection</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
-                </NavLink>
+                </NavLink> */}
 
                 <NavLink to='/about' className='flex flex-col items-center gap-1'>
                     <p>About</p>
@@ -62,6 +62,11 @@ const Navbar = () => {
 
                 <NavLink to='/contact' className='flex flex-col items-center gap-1'>
                     <p>Contact</p>
+                    <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
+                </NavLink>
+
+                <NavLink to='/contact' className='flex flex-col items-center gap-1'>
+                    <p>Track Order</p>
                     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
                 </NavLink>
             </ul>
@@ -160,6 +165,14 @@ const Navbar = () => {
                         to='/contact'
                     >
                         Contact
+                    </NavLink>
+
+                    <NavLink 
+                        onClick={() => setVisible(false)} 
+                        className='py-2 pl-6 border-b' 
+                        to='/contact'
+                    >
+                        Track Order
                     </NavLink>
                 </div>
             </div>

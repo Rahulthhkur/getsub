@@ -79,6 +79,10 @@ import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 import swatch from './swatch.png'
 import newsl from './newsl.png'
+import watchcate from './watchcate.png'
+import earbudscat from './earbudscat.png'
+import headphonecat from './headphonecat.png'
+import dronecat from './dronecat.png'
 
 export const assets = {
     logo,
@@ -100,7 +104,7 @@ export const assets = {
     stripe_logo,
     cross_icon,
     swatch,
-    ts1,ts2,newsl
+    ts1,ts2,newsl,watchcate,earbudscat,headphonecat,dronecat
 }
 
 export const products = [
