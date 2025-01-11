@@ -23,7 +23,7 @@ const Order = () => {
                 <div className='flex items-center gap-3 mt-2 text-base text-gray-700'>
                   <p className='text-lg'>{currency}{item.price}</p>
                   <p>Quantity:1</p>
-                  <p>Size:M</p>
+                  <p>Color:Black</p>
                 </div>
                 <p className='mt-2'>Date <span className='text-gray-400'>25,July,2024</span></p>
               </div>
@@ -33,7 +33,7 @@ const Order = () => {
                   <p className='min-w-2 h-2 rounded-full bg-green-500'></p>
                   <p className='text-sm md:text-base'>Ready to ship</p>
                 </div>
-                <button className=''>
+                <button className='border px-4 py-2 text-sm font-medium rounded-sm '>
                   Track Order
                 </button>
               </div>

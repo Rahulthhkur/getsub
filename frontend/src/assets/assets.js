@@ -245,7 +245,7 @@ export const products = [
 </div>
 `,
         price: 1299,
-        image: [t10a,t10b,t10c],
+        image: [t10b,t10a,t10c],
         category: "Smartwatch",
         subCategory: "Above1000",
         colors: ["Metallic Grey"],
