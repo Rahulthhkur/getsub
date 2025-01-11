@@ -5,6 +5,7 @@ import Title from '../components/Title.jsx';
 import ProductItem from '../components/ProductItem.jsx';
 import { useLocation } from 'react-router-dom';
 import { Filter, SlidersHorizontal } from 'lucide-react';
+import PromoBanner from '../components/PromoBanner.jsx';
 
 const Collection = ({ initialCategory, title }) => {
   const { products, search, showSearch } = useContext(ShopContext);
@@ -141,39 +142,7 @@ const Collection = ({ initialCategory, title }) => {
     </>
   )}
   {/* Sub Category Filter */}
-  <div className={`border border-gray-200 rounded-lg shadow-sm pl-5 py-3 my-5 hover:border-gray-300 transition-colors ${showFilter ? '' : 'hidden'} sm:block`}>
-    <p className='mb-3 text-sm font-medium text-gray-800 uppercase tracking-wide'>
-      <span className="flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M3 7h18M3 12h18M3 17h18" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-        TYPE
-      </span>
-    </p>
-    <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-      <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
-        <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
-               type="checkbox" 
-               value={'Topwear'} 
-               onChange={toggleSubCategory} />
-        Topwear
-      </label>
-      <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
-        <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
-               type="checkbox" 
-               value={'Bottomwear'} 
-               onChange={toggleSubCategory} />
-        Bottomwear
-      </label>
-      <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
-        <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
-               type="checkbox" 
-               value={'Winterwear'} 
-               onChange={toggleSubCategory} />
-        Winterwear
-      </label>
-    </div>
-  </div>
+  <PromoBanner/>
 </div>
 
       {/* Right Side */}

@@ -42,13 +42,16 @@ const Product = () => {
             <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto md:w-24 no-scrollbar">
               {productData.image.map((item, index) => (
                 <img
-                  onClick={() => setimage(item)}
-                  src={item}
-                  key={index}
-                  className={`w-20 h-20 object-cover cursor-pointer rounded-lg border 
-                    ${image === item ? 'border-orange-500 shadow-md' : 'border-gray-200'}`}
-                  alt={`Product view ${index + 1}`}
-                />
+                onMouseEnter={() => setimage(item)}
+                onClick={() => setimage(item)} // Allow clicking to select
+                onKeyDown={(e) => e.key === 'Enter' && setimage(item)} // Select on Enter key press
+                src={item}
+                key={index}
+                tabIndex={0}
+                className={`w-20 h-20 object-cover cursor-pointer rounded-lg 
+                  ${image === item ? 'ring-2 m-1 ring-orange-500' : ''}`}
+                alt={`Product view ${index + 1}`}
+              />
               ))}
             </div>
             {/* Main Image */}
@@ -64,7 +67,7 @@ const Product = () => {
 
         {/* Product Info Section */}
         <div className="flex-1 space-y-6">
-          <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">{productData.name}</h1>
+          <h1 className="text-xl md:text-2xl font-medium text-gray-800">{productData.name}</h1>
 
           {/* Rating */}
           <div className="flex items-center gap-1">
@@ -85,13 +88,16 @@ const Product = () => {
           </div>
 
           {/* Description */}
-          <p className="text-gray-700 leading-relaxed">{productData.description}</p>
+          <div 
+  className="text-gray-700 leading-relaxed" 
+  dangerouslySetInnerHTML={{ __html: productData.features }} 
+/>
 
           {/* Size Selection */}
           <div className="space-y-4">
-            <h3 className="font-medium text-gray-800">Select Size</h3>
+            <h3 className="font-medium text-gray-800">Select Color</h3>
             <div className="flex flex-wrap gap-2">
-              {productData.sizes.map((item, index) => (
+              {productData.colors.map((item, index) => (
                 <button
                   key={index}
                   onClick={() => setsize(item)}
@@ -146,40 +152,42 @@ const Product = () => {
 
       {/* Tabs Section */}
       <div className="mt-16">
-        <div className="flex border-b">
-          <button
-            onClick={() => setActiveTab('description')}
-            className={`px-6 py-3 text-sm font-medium transition-colors
-              ${activeTab === 'description'
-                ? 'border-b-2 border-black text-black'
-                : 'text-gray-500 hover:text-black'
-              }`}
-          >
-            Description
-          </button>
-          <button
-            onClick={() => setActiveTab('reviews')}
-            className={`px-6 py-3 text-sm font-medium transition-colors
-              ${activeTab === 'reviews'
-                ? 'border-b-2 border-black text-black'
-                : 'text-gray-500 hover:text-black'
-              }`}
-          >
-            Reviews (122)
-          </button>
-        </div>
-        <div className="py-6">
-          {activeTab === 'description' ? (
-            <div className="prose max-w-none">
-              <p>{productData.description}</p>
-            </div>
-          ) : (
-            <div className="text-gray-600">
-              <p>Customer reviews coming soon...</p>
-            </div>
-          )}
-        </div>
+  <div className="flex border-b">
+    <button
+      onClick={() => setActiveTab('description')}
+      className={`px-6 py-3 text-sm font-medium transition-colors
+        ${activeTab === 'description'
+          ? 'border-b-2 border-black text-black'
+          : 'text-gray-500 hover:text-black'
+        }`}
+    >
+      Description
+    </button>
+    <button
+      onClick={() => setActiveTab('reviews')}
+      className={`px-6 py-3 text-sm font-medium transition-colors
+        ${activeTab === 'reviews'
+          ? 'border-b-2 border-black text-black'
+          : 'text-gray-500 hover:text-black'
+        }`}
+    >
+      Reviews (122)
+    </button>
+  </div>
+
+  <div className="py-6">
+    {activeTab === 'description' ? (
+      <div 
+        className="prose max-w-none"
+        dangerouslySetInnerHTML={{ __html: productData.description }} 
+      />
+    ) : (
+      <div className="text-gray-600">
+        <p>Customer reviews coming soon...</p>
       </div>
+    )}
+  </div>
+</div>
 
       {/* Display Related Products */}
       <RelatedProduct

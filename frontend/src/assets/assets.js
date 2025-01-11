@@ -1,10 +1,4 @@
-import p_img1 from './p_img1.png'
-import p_img2_1 from './p_img2_1.png'
-import p_img2_2 from './p_img2_2.png'
-import p_img2_3 from './p_img2_3.png'
-import p_img2_4 from './p_img2_4.png'
-import p_img3 from './p_img3.png'
-import p_img4 from './p_img4.png'
+
 import p_img5 from './p_img5.png'
 import p_img6 from './p_img6.png'
 import p_img7 from './p_img7.png'
@@ -57,6 +51,19 @@ import p_img53 from './p_img53.png'
 import p_img54 from './p_img54.png'
 import ts1 from "./ts1.png"
 import ts2 from "./ts2.png"
+import hk1 from "./hk1.png"
+import hk2 from "./hk2.png"
+import hk3 from "./hk3.png"
+import hk4 from "./hk4.png"
+import hk5 from "./hk5.png"
+import t10a from "./t10a.png"
+import t10b from "./t10b.png"
+import t10c from "./t10c.png"
+import h9a from "./h9a.png"
+import h9b from "./h9b.png"
+import h9c from "./h9c.png"
+import h9d from "./h9d.png"
+
 
 
 import logo from './logo.png'
@@ -108,54 +115,194 @@ export const assets = {
 }
 
 export const products = [
-    {
-        _id: "aaaaa",
-        name: "Women Round Neck Cotton Top",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 100,
-        image: [p_img1],
-        category: "Women",
-        subCategory: "Topwear",
-        sizes: ["S", "M", "L"],
+    
+      {
+        _id: "HK10ProMax",
+        name: "HK10 Pro Max",
+        features : `<h2 class="text-xl font-normal text-gray-500 mb-6">Experience the future of wearable technology with the HK10 Pro Max smartwatch, where cutting-edge innovation meets elegant design.</h2>`,
+        description: `
+          <div class="max-w-4xl mx-auto space-y-6 text-gray-800">
+           
+      
+            <div class="space-y-6">
+              <section>
+                <h3 class="text-lg font-semibold mb-2">Stunning Display</h3>
+                <p class="text-gray-600">Immerse yourself in a crystal-clear 2.02" AMOLED screen (410x494 resolution) that brings every detail to life.</p>
+              </section>
+      
+              <section>
+                <h3 class="text-lg font-semibold mb-2">Advanced AI Integration</h3>
+                <ul class="list-disc pl-6 space-y-1 text-gray-600">
+                  <li>Generate unique watch faces using AI technology</li>
+                  <li>Multi-language voice translation support</li>
+                  <li>AI-powered photo album for watch face customization</li>
+                </ul>
+              </section>
+      
+              <section>
+                <h3 class="text-lg font-semibold mb-2">Complete Health Suite</h3>
+                <ul class="list-disc pl-6 space-y-1 text-gray-600">
+                  <li>Real-time heart rate monitoring</li>
+                  <li>Blood pressure tracking</li>
+                  <li>Sleep quality analysis</li>
+                  <li>Blood oxygen measurement</li>
+                  <li>Smart activity reminders</li>
+                  <li>Daily step counter</li>
+                </ul>
+              </section>
+      
+              <section>
+                <h3 class="text-lg font-semibold mb-2">Superior Connectivity</h3>
+                <ul class="list-disc pl-6 space-y-1 text-gray-600">
+                  <li>Latest Bluetooth 5.3 technology</li>
+                  <li>Built-in calling functionality</li>
+                  <li>TWS earbuds compatibility</li>
+                  <li>Local music storage & playback</li>
+                </ul>
+              </section>
+      
+              <section>
+                <h3 class="text-lg font-semibold mb-2">Smart Navigation</h3>
+                <p class="text-gray-600">Integrated Baidu Navigation 2.0 with full-view map display.</p>
+              </section>
+      
+              <section>
+                <h3 class="text-lg font-semibold mb-2">Personal Touch</h3>
+                <ul class="list-disc pl-6 space-y-1 text-gray-600">
+                  <li>Dynamic watch face animations</li>
+                  <li>Custom ringtone options</li>
+                  <li>Multiple sports tracking modes</li>
+                </ul>
+              </section>
+      
+              <section>
+                <h3 class="text-lg font-semibold mb-2">Convenient Features</h3>
+                <ul class="list-disc pl-6 space-y-1 text-gray-600">
+                  <li>Alipay and QR code payment support</li>
+                  <li>Quick shake photo capture</li>
+                  <li>Remote camera control</li>
+                  <li>Essential tools: stopwatch, alarm, weather updates</li>
+                </ul>
+              </section>
+      
+              <section>
+                <h3 class="text-lg font-semibold mb-2">Built to Last</h3>
+                <ul class="list-disc pl-6 space-y-1 text-gray-600">
+                  <li>IP67 water resistance rating</li>
+                  <li>Wireless charging capability</li>
+                </ul>
+              </section>
+      
+              <section>
+                <h3 class="text-lg font-semibold mb-2">Device Compatibility</h3>
+                <p class="text-gray-600">Compatible with Android 4.4 and above, iOS 8.0 and above.</p>
+              </section>
+      
+              <h2 class="text-xl font-semibold text-blue-600 mt-8">Transform your daily routine with the HK10 Pro Max - your intelligent companion for a connected lifestyle.</h2>
+            </div>
+          </div>
+        `,
+        price: 2299,
+        image: [hk1,hk2,hk3,hk4,hk5],
+        category: "Smartwatch",
+        subCategory: "Above2000", 
+        colors: ["Black"],
         date: 1716634345448,
         bestseller: true
-    },
-    {
-        _id: "aaaab",
-        name: "Men Round Neck Pure Cotton T-shirt",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 200,
-        image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
-        category: "Men",
-        subCategory: "Topwear",
-        sizes: ["M", "L", "XL"],
-        date: 1716621345448,
+      },
+      {
+        _id: "T10PRO",
+        name: "T10 Ultra Smartwatch ",
+        features : `<h2 class="text-xl font-normal text-gray-500 mb-6">T10 Ultra 49mm Smartwatch combines cutting-edge technology with a sleek design, making it an ideal companion for both fitness enthusiasts and tech-savvy individuals.</h2>`,
+       description: `<div class="max-w-4xl mx-auto space-y-6 text-gray-800">
+  <div class="space-y-6">
+    <section>
+      <h3 class="text-lg font-semibold mb-2">Stunning Display</h3>
+      <p class="text-gray-600">Immerse yourself in a crystal-clear 2.02" AMOLED screen (410x494 resolution) that brings every detail to life. Experience the convenience of a 2.09-inch Infinite Display with Always-On functionality, keeping your information visible at all times.</p>
+    </section>
+
+    <section>
+      <h3 class="text-lg font-semibold mb-2">New Upgrade Version Features</h3>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600">
+        <li>49mm dial size for a big, bold look</li>
+        <li>Crown working functionality for smooth operation</li>
+        <li>New Upgrade Version Watch with totally new features</li>
+        <li>Always-On Display for continuous visibility</li>
+        <li>Inbuilt Game Available for entertainment on the go</li>
+        <li>Night Mode for better display in low light conditions</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 class="text-lg font-semibold mb-2">Display Features</h3>
+      <ul class="list-disc pl-6 space-y-1 text-gray-600">
+        <li>2.09 Inch Display for clearer and sharper visuals</li>
+        <li>Infinite Display that enhances screen experience</li>
+        <li>Wireless Charging capability for easy power-ups</li>
+      </ul>
+    </section>
+  </div>
+</div>
+`,
+        price: 1299,
+        image: [t10a,t10b,t10c],
+        category: "Smartwatch",
+        subCategory: "Above1000",
+        colors: ["Metallic Grey"],
+        date: 1716634345448,
         bestseller: true
-    },
-    {
-        _id: "aaaac",
-        name: "Girls Round Neck Cotton Top",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 220,
-        image: [p_img3],
-        category: "Kids",
-        subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
-        date: 1716234545448,
+      },
+      {
+        _id: "H9PRO",
+        name: "H9 PRO Smartwatch ",
+        features : `<h2 class="text-xl font-normal text-gray-500 mb-6">H9 Pro Max Smart Watch comes with a variety of watch faces, most of which you can customize.</h2>`,
+       description: `
+  <div class="max-w-4xl mx-auto space-y-6 text-gray-800">
+    <div class="space-y-6">
+      <section>
+        <h3 class="text-lg font-semibold mb-2">Stunning Display</h3>
+        <p class="text-gray-600">Immerse yourself in a crystal-clear 2.09" AMOLED screen that brings every detail to life with Infinite Display technology.</p>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mb-2">New Upgrade Version Watch</h3>
+        <ul class="list-disc pl-6 space-y-1 text-gray-600">
+          <li>49 mm Dial Size</li>
+          <li>Crown Working</li>
+          <li>Big Dial Watch</li>
+          <li>Always-On Display</li>
+          <li>Totally New Features</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mb-2">Wireless Charging</h3>
+        <ul class="list-disc pl-6 space-y-1 text-gray-600">
+          <li>Supports wireless charging</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mb-2">Inbuilt Game</h3>
+        <p class="text-gray-600">Enjoy a variety of games directly on your watch.</p>
+      </section>
+
+      <section>
+        <h3 class="text-lg font-semibold mb-2">Night Mode Features</h3>
+        <p class="text-gray-600">Experience the new Night Mode for better visibility and comfort in low light.</p>
+      </section>
+    </div>
+  </div>
+`,
+        price: 1199,
+        image: [h9a,h9b,h9c,h9d],
+        category: "Smartwatch",
+        subCategory: "Above1000",
+        colors: ["Black", "Grey", "Gold"],
+        date: 1716634345448,
         bestseller: true
-    },
-    {
-        _id: "aaaad",
-        name: "Men Round Neck Pure Cotton T-shirt",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 110,
-        image: [p_img4],
-        category: "Men",
-        subCategory: "Topwear",
-        sizes: ["S", "M", "XXL"],
-        date: 1716621345448,
-        bestseller: true
-    },
+      },
+  
     {
         _id: "aaaae",
         name: "Women Round Neck Cotton Top",
@@ -163,7 +310,7 @@ export const products = [
         price: 130,
         image: [p_img5],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "Above1000",
         sizes: ["M", "L", "XL"],
         date: 1716622345448,
         bestseller: true
@@ -732,7 +879,7 @@ export const products = [
         bestseller: false
     },
     {
-        _id: "aaabz",
+        _id: "aaabaa",
         name: "AIRPODS MAX",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 350,
@@ -743,17 +890,5 @@ export const products = [
         date: 1716668445448,
         bestseller: true
     },
-    {
-        _id: "aaabz",
-        name: "Ultra 2 WATCH",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 350,
-        image: [p_img54],
-        category: "Smartwatch",
-        subCategory: "Winterwear",
-        sizes: ["S", "M", "L", "XL"],
-        date: 1716668445448,
-        bestseller: false
-    }
 
 ]
