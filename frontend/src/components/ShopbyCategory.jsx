@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { assets } from '../assets/assets';
 import Title from './Title';
@@ -39,18 +39,7 @@ const categories = [
 
 export default function ShopCategories() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const next = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === categories.length - getVisibleItems() ? 0 : prevIndex + 1
-    );
-  };
-
-  const prev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? categories.length - getVisibleItems() : prevIndex - 1
-    );
-  };
+  const [isVisible, setIsVisible] = useState(false);
 
   const getVisibleItems = () => {
     if (typeof window !== 'undefined') {
@@ -61,24 +50,40 @@ export default function ShopCategories() {
     return 4;
   };
 
+  useEffect(() => {
+    // Fade in animation on mount
+    setIsVisible(true);
+
+    // Auto-sliding functionality
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === categories.length - getVisibleItems() ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="mt-8 sm:mt-12 md:mt-16">
+    <section 
+      className={`mt-8 sm:mt-12 md:mt-16 transition-opacity duration-1000 ease-in-out ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Title Section - Now outside the box with larger text */}
         <div className="mb-12 text-center text-3xl">
           <Title text1={'SHOP BY'} text2={'CATEGORY'}/>
-          <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'">
+          <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
             Discover our curated selection of premium products across various categories.
             Find the perfect tech accessories and fashion items for your lifestyle.
           </p>
         </div>
 
-        {/* Categories Section */}
         <div className="bg-gray-50 rounded-3xl py-12 px-8">
           <div className="relative">
             <div className="overflow-hidden">
               <div
-                className="flex transition-transform duration-500 ease-out"
+                className="flex transition-transform duration-700 ease-in-out"
                 style={{
                   transform: `translateX(-${(currentIndex * 100) / getVisibleItems()}%)`
                 }}
@@ -118,22 +123,6 @@ export default function ShopCategories() {
                 ))}
               </div>
             </div>
-
-            <button
-              onClick={prev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              aria-label="Previous category"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-700" />
-            </button>
-
-            <button
-              onClick={next}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              aria-label="Next category"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-700" />
-            </button>
           </div>
         </div>
       </div>
