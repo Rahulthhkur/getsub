@@ -14,6 +14,10 @@ import Footer from './components/Footer';
 import Shop from './pages/Shop';
 import Smartwatches from './pages/Smartwatches';
 import Headphones from './pages/Headphones';
+import Earbuds from './pages/Earbuds';
+import Drones from './pages/Drones';
+import Accessories from './pages/Accessories';
+import Combo from './pages/Combo';
 import SearchBar from './components/SearchBar';
 import { Toaster } from 'react-hot-toast';
 
@@ -32,6 +36,10 @@ return (
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/shop/smart-watches' element={<Smartwatches/>}/>
         <Route path='/shop/headphones' element={<Headphones/>}/>
+        <Route path='/shop/earbuds' element={<Earbuds/>}/>
+        <Route path='/shop/drones' element={<Drones/>}/>
+        <Route path='/shop/accessories' element={<Accessories/>}/>
+        <Route path='/shop/combo-offers' element={<Combo/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/product/:productId' element={<Product/>}/>

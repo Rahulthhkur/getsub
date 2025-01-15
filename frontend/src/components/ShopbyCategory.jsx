@@ -15,25 +15,25 @@ const categories = [
     id: 2,
     name: 'Earbuds',
     image: assets.earbudscat,
-    path: '/category/earbuds'
+    path: '/shop/earbuds'
   },
   {
     id: 3,
     name: 'Headphones',
     image: assets.headphonecat,
-    path: '/category/headphones'
+    path: '/shop/headphones'
   },
   {
     id: 4,
     name: 'Drones',
     image: assets.dronecat,
-    path: '/category/drones'
+    path: '/shop/drones'
   },
   {
     id: 5,
-    name: 'Kids Wear',
-    image: '/placeholder.svg?height=400&width=300',
-    path: '/category/kids-wear'
+    name: 'Accessories',
+    image: assets.accesscate,
+    path: '/shop/accessories'
   }
 ];
 

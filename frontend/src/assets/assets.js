@@ -63,7 +63,10 @@ import h9a from "./h9a.png"
 import h9b from "./h9b.png"
 import h9c from "./h9c.png"
 import h9d from "./h9d.png"
-
+import airpodspro2 from "./airpodspro2.png"
+import airpodspro2a from "./airpodspro2a.png"
+import airpodspro2b from "./airpodspro2b.png"
+import airpodspro2c from "./airpodspro2c.png"
 
 
 import logo from './logo.png'
@@ -90,6 +93,7 @@ import watchcate from './watchcate.png'
 import earbudscat from './earbudscat.png'
 import headphonecat from './headphonecat.png'
 import dronecat from './dronecat.png'
+import accesscate from './accesscate.png'
 
 export const assets = {
     logo,
@@ -111,7 +115,7 @@ export const assets = {
     stripe_logo,
     cross_icon,
     swatch,
-    ts1,ts2,newsl,watchcate,earbudscat,headphonecat,dronecat
+    ts1,ts2,newsl,watchcate,earbudscat,headphonecat,dronecat,accesscate
 }
 
 export const products = [
@@ -304,14 +308,14 @@ export const products = [
       },
   
     {
-        _id: "aaaae",
-        name: "Women Round Neck Cotton Top",
+        _id: "EarbudsPro",
+        name: "Earbuds Pro",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 130,
-        image: [p_img5],
-        category: "Women",
+        price: 1299,
+        image: [airpodspro2,airpodspro2a,airpodspro2b,airpodspro2c],
+        category: "Earbuds",
         subCategory: "Above1000",
-        sizes: ["M", "L", "XL"],
+        colors: ["White", "Black"],
         date: 1716622345448,
         bestseller: true
     },

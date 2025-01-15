@@ -133,9 +133,9 @@ const Collection = ({ initialCategory, title }) => {
           <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
             <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
                    type="checkbox" 
-                   value={'Kids'} 
+                   value={'Earbuds'} 
                    onChange={toggleCategory} />
-            Kids
+            Earbuds
           </label>
         </div>
       </div>
