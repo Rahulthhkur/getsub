@@ -5,6 +5,7 @@ import productModel from '../models/productModel.js'
 
 // Function for add product
 const addProducts = async (req, res) => {
+
     try {
         const { name, features, description, price, category, colors, bestseller } = req.body;
 
@@ -59,11 +60,23 @@ const addProducts = async (req, res) => {
 
 // Function for list product
 const listProducts = async (req, res) => {
+    try {
+        const products = await productModel.find({});
+        res.json({success:true ,products})
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
 
 }
 
 // Function for removing product
 const removeProducts = async (req, res) => {
+    try {
+        await productModel.findByIdAndDelete
+    } catch (error) {
+        
+    }
 
 }
 
