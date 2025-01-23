@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { assets } from "../assets/assets";
+import { toast } from "react-toastify";
 
 const Add = () => {
   const [image1, setimage1] = useState(false);
@@ -51,8 +52,12 @@ const Add = () => {
         }
       );
 
-      console.log("Product added successfully:", response.data);
-      alert("Product added successfully!");
+      if (response.data.success) {
+        toast.success(response.data.message)
+      }
+      else{
+        toast.error(response.data.message)
+      }
 
       // Reset the form
       setname("");
