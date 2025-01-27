@@ -114,7 +114,7 @@ useEffect(() => {
     setshowSearch,
     cartItems,
     addToCart,
-    getCartCount, updateQuantity, getCartAmount, navigate, settoken
+    getCartCount, updateQuantity, getCartAmount, navigate, settoken,token,setcartItems
   };
 
   return (
