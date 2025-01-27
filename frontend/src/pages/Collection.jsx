@@ -80,7 +80,8 @@ const Collection = ({ initialCategory, title }) => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory , search, showSearch])
+  }, [products,category, subCategory , search, showSearch])
+
 
   useEffect(() => {
     sortProduct();

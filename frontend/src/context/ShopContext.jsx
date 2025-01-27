@@ -14,6 +14,7 @@ const ShopContextProvider = ({ children }) => {
   const [showSearch, setshowSearch] = useState(false);
   const [cartItems, setcartItems] = useState({});
   const [products, setProducts] = useState([])
+  const [token, settoken] = useState('')
   const navigate = useNavigate();
   
 
@@ -113,7 +114,7 @@ useEffect(() => {
     setshowSearch,
     cartItems,
     addToCart,
-    getCartCount, updateQuantity, getCartAmount, navigate
+    getCartCount, updateQuantity, getCartAmount, navigate, settoken
   };
 
   return (
