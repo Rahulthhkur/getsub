@@ -43,6 +43,9 @@ const Cart = () => {
         ) : (
           cartData.map((item, index) => {
             const productData = products.find((products) => products._id === item._id);
+            if (!productData) {
+              return null; // Skip this item if productData is not found
+            }
             return (
               <div
                 key={index}

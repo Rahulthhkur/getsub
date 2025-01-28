@@ -140,6 +140,11 @@ useEffect(()=>{
   }
 },[])
 
+useEffect(() => {
+  if (token) {
+      getUserCart(token);
+  }
+}, [token]);
 
 
   const value = {
