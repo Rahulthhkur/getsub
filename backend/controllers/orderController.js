@@ -1,12 +1,10 @@
 import userModel from "../models/userModel.js";
 import orderModel from "../models/orderModel.js"; // Assuming you have this model
- 
- 
+
 // Placing Order Using COD Method
 const placeOrder = async (req, res) => {
   try {
     const { userId, items, amount, address } = req.body;
-
 
     const orderData = {
       userId,
@@ -31,29 +29,29 @@ const placeOrder = async (req, res) => {
 };
 
 // Placing Order Using Stripe
-const placeOrderStripe = async (req, res) => {
-  
-};
+const placeOrderStripe = async (req, res) => {};
 
 // Placing Order Using Razorpay
-const placeOrderRazorpay = async (req, res) => {
-  
-};
+const placeOrderRazorpay = async (req, res) => {};
 
 // Fetch All Orders
-const allOrders = async (req, res) => {
-  
-};
+const allOrders = async (req, res) => {};
 
 // Fetch User-Specific Orders
 const userOrders = async (req, res) => {
-  
+  try {
+    const { userId } = req.body;
+
+    const orders = await orderModel.find({ userId });
+    res.json({ success: true, orders });
+  } catch (error) {
+    console.error(error);
+    res.json({ success: false, message: error.message });
+  }
 };
 
 // Update Order Status
-const updateStatus = async (req, res) => {
-  
-};
+const updateStatus = async (req, res) => {};
 
 export {
   placeOrder,
