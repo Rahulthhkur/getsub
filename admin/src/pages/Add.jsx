@@ -16,6 +16,7 @@ const Add = () => {
   const [category, setcategory] = useState("Smartwatch");
   const [bestSeller, setbestSeller] = useState(false);
   const [colors, setcolors] = useState([]);
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
 
   const token = localStorage.getItem("token"); // Retrieve token from localStorage or another source
 
@@ -41,8 +42,7 @@ const Add = () => {
       if (image4) formData.append("image4", image4);
 
       // Send to API
-      const response = await axios.post(
-        "http://localhost:4000/api/product/add",
+      const response = await axios.post(`${API_URL}/api/product/add`,
         formData,
         {
           headers: {
