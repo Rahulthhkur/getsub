@@ -155,6 +155,7 @@ const Add = () => {
             <option value="Headphones">Headphones</option>
             <option value="Drones">Drones</option>
             <option value="Accessories">Accessories</option>
+            <option value="Combo">Accessories</option>
           </select>
         </div>
         <div>

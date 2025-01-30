@@ -1,5 +1,16 @@
 import userModel from "../models/userModel.js";
-import orderModel from "../models/orderModel.js"; // Assuming you have this model
+import orderModel from "../models/orderModel.js"; 
+import razorpay from 'razorpay'
+
+
+const currency = 'inr'
+const deliveryCharge = 49
+
+
+const razorpayInstance = new razorpay({
+  key_id: process.env.RAZORPAY_KEY_ID ,
+  key_secret: process.env.RAZORPAY_KEY_SECRET,
+})
 
 // Placing Order Using COD Method
 const placeOrder = async (req, res) => {
@@ -32,7 +43,58 @@ const placeOrder = async (req, res) => {
 const placeOrderStripe = async (req, res) => {};
 
 // Placing Order Using Razorpay
-const placeOrderRazorpay = async (req, res) => {};
+const placeOrderRazorpay = async (req, res) => {
+  try {
+    const { userId, items, amount, address} = req.body;
+
+    const orderData = {
+      userId,
+      items,
+      address,
+      amount,
+      paymentMethod: "Razorpay",
+      payment: false,
+      date: Date.now(),
+    };
+
+    const newOrder = new orderModel(orderData);
+    await newOrder.save();
+
+    const options = {
+      amount: amount * 100, // Convert to paise
+      currency: currency.toUpperCase(),
+      receipt: newOrder._id.toString(), // Fixed spelling
+    };
+
+    const order = await razorpayInstance.orders.create(options);
+    
+    res.json({ success: true, order });
+    
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+const verifyRazorpay = async(req,res)=>{
+  try {
+    const {userId, razorpay_order_id}= req.body
+
+    const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id)
+    if (orderInfo.status=== 'paid') {
+      await orderModel.findByIdAndUpdate(orderInfo.receipt, {payment:true});
+      await userModel.findByIdAndUpdate(userId, {cartData:{}})
+      res.json({success:true, message:'payment successfull'})
+    }
+    else{
+      res.json({success:false, message:'payment failed'})
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+}
+
 
 // Fetch All Orders
 const allOrders = async (req, res) => {
@@ -77,4 +139,5 @@ export {
   allOrders,
   userOrders,
   updateStatus,
+  verifyRazorpay
 };

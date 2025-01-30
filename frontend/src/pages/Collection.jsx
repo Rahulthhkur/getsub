@@ -138,6 +138,27 @@ const Collection = ({ initialCategory, title }) => {
                    onChange={toggleCategory} />
             Earbuds
           </label>
+          <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
+            <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
+                   type="checkbox" 
+                   value={'Drones'} 
+                   onChange={toggleCategory} />
+            Drones
+          </label>
+          <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
+            <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
+                   type="checkbox" 
+                   value={'Accessories'} 
+                   onChange={toggleCategory} />
+            Accessories
+          </label>
+          <label className='flex gap-2 items-center hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer'>
+            <input className='w-3 h-3 accent-blue-600 cursor-pointer' 
+                   type="checkbox" 
+                   value={'Combo'} 
+                   onChange={toggleCategory} />
+            Combo Offers
+          </label>
         </div>
       </div>
     </>

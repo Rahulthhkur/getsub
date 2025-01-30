@@ -1,8 +1,12 @@
 import React from 'react'
+import Collection from './Collection'
 
 const Accessories = () => {
   return (
-    <div>Accessories</div>
+    <Collection 
+    initialCategory="Accessories"
+    title={{ text1: "OUR", text2: "ACCESSORIES" }}
+  />
   )
 }
 
