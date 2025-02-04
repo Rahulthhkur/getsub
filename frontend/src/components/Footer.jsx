@@ -12,7 +12,8 @@ const Footer = () => {
           <div className="space-y-6">
             <img src={assets.logo} alt="Company Logo" className="w-32 h-auto" />
             <p className="text-gray-600 text-sm leading-relaxed max-w-md">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim reiciendis, adipisci sed aperiam officiis minima iure, aliquid sapiente accusantium facere.
+            🚀 GetSub – Your One-Stop Shop! <br />
+            Discover top-quality gadgets, fashion, and accessories at unbeatable prices. Elevate your style with our exclusive collections.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">

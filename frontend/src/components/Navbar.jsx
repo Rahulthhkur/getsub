@@ -59,26 +59,26 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <ul className="hidden sm:flex gap-5 text-base text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
-          <p>Home</p>
+          <p>HOME</p>
         </NavLink>
 
         <div className="relative group">
           <NavLink to="/shop" className="flex flex-col items-center gap-1">
-            <p>Shop</p>
+            <p>SHOP</p>
           </NavLink>
           <ShopDropdown items={shopMenuItems} />
         </div>
 
         <NavLink to="/about" className="flex flex-col items-center gap-1">
-          <p>About</p>
+          <p>ABOUT</p>
         </NavLink>
 
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
-          <p>Contact</p>
+          <p>CONTACT</p>
         </NavLink>
 
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
-          <p>Track Order</p>
+          <p>TRACK ORDER</p>
         </NavLink>
       </ul>
 
