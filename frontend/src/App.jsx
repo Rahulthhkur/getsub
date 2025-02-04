@@ -20,6 +20,10 @@ import Accessories from './pages/Accessories';
 import Combo from './pages/Combo';
 import SearchBar from './components/SearchBar';
 import { Toaster } from 'react-hot-toast';
+import TermsAndConditions from './pages/TermsCondition';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import ShippingPolicy from './pages/ShippingPolicy';
+import CancellationRefundPolicy from './pages/CancellationRefundPolicy';
 
 
 const App = () => {
@@ -47,6 +51,11 @@ return (
         <Route path='/login' element={<Login/>}/>
         <Route path='/place-order' element={<PlaceOrder/>}/>
         <Route path='/order' element={<Order/>}/>
+        <Route path='/termsandcondition' element={<TermsAndConditions/>}/>
+        <Route path='/privacypolicy' element={<PrivacyPolicy/>}/>
+        <Route path='/shippingpolicy' element={<ShippingPolicy/>}/>
+        <Route path='/cancellation-refunds' element={<CancellationRefundPolicy/>}/>
+
       </Routes>
       <Footer/>
     </div>

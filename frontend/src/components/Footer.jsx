@@ -1,6 +1,7 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Clock, Heart } from 'lucide-react';
 import { assets } from '../assets/assets';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -33,15 +34,31 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="lg:ml-8">
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Services</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Delivery</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Privacy Policy</a></li>
-            </ul>
-          </div>
+  <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+  <ul className="flex flex-col gap-3">
+    <NavLink to="/" className="text-gray-600 transition-colors">
+      <li>Home</li>
+    </NavLink>
+    <NavLink to="/about" className="text-gray-600  transition-colors">
+      <li>About Us</li>
+    </NavLink>
+    <NavLink to="/termsandcondition" className="text-gray-600 transition-colors">
+      <li>Terms and Conditions</li>
+    </NavLink>
+    <NavLink to="/privacypolicy" className="text-gray-600 transition-colors">
+      <li>Privacy Policy</li>
+    </NavLink>
+    <NavLink to="/shippingpolicy" className="text-gray-600 transition-colors">
+      <li>Shipping Policy</li>
+    </NavLink>
+    <NavLink to="/cancellation-refunds" className="text-gray-600 transition-colors">
+      <li>Cancellation and Refunds</li>
+    </NavLink>
+  </ul>
+</div>
+
+
+
 
           {/* Contact Info */}
           <div className="lg:ml-8">
