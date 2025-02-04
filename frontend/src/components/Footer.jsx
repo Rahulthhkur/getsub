@@ -66,7 +66,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 text-gray-600">
                 <Phone size={18} className="flex-shrink-0" />
-                <span>+1-212-23223-90</span>
+                <span>+91-9520359121</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-600">
                 <Mail size={18} className="flex-shrink-0" />
@@ -74,11 +74,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3 text-gray-600">
                 <Clock size={18} className="flex-shrink-0" />
-                <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                <span>Mon - Fri: 10:00 AM - 6:00 PM</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-600">
                 <MapPin size={18} className="flex-shrink-0" />
-                <span>123 Business Street, New York</span>
+                <span>A-45, Lajpat Nagar II, New Delhi, Delhi 110024, India</span>
               </li>
             </ul>
           </div>
@@ -95,7 +95,7 @@ const Footer = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-600">
               <span>Made with</span>
               <Heart size={16} className="text-red-500 fill-current" />
-              <span>by GetSub Team</span>
+              <span>by Future Core Innovations</span>
             </div>
           </div>
         </div>
