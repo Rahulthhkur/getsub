@@ -6,6 +6,8 @@ import OurPolicy from '../components/OurPolicy'
 import NewsletterBox from '../components/NewsletterBox'
 import TestimonialsSection from '../components/Testimonials'
 import ShopbyCategory from '../components/ShopbyCategory'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Ensure the styles are imported
 
 const Home = () => {
   return (

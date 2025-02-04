@@ -26,7 +26,6 @@ import ShippingPolicy from './pages/ShippingPolicy';
 import CancellationRefundPolicy from './pages/CancellationRefundPolicy';
 import { Analytics } from "@vercel/analytics/react"
 
-
 const App = () => {
   
 return (
@@ -57,7 +56,7 @@ return (
         <Route path='/shippingpolicy' element={<ShippingPolicy/>}/>
         <Route path='/cancellation-refunds' element={<CancellationRefundPolicy/>}/>
       </Routes>
-      <Analytics />
+      <Analytics/>
       <Footer/>
     </div>
   );

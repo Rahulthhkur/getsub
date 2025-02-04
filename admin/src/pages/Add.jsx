@@ -16,6 +16,7 @@ const Add = () => {
   const [category, setcategory] = useState("Smartwatch");
   const [bestSeller, setbestSeller] = useState(false);
   const [colors, setcolors] = useState([]);
+  
   const API_URL = import.meta.env.VITE_BACKEND_URL;
 
   const token = localStorage.getItem("token"); // Retrieve token from localStorage or another source

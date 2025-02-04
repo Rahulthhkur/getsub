@@ -36,7 +36,7 @@ const Footer = () => {
           <div className="lg:ml-8">
   <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
   <ul className="flex flex-col gap-3">
-    <NavLink to="/" className="text-gray-600 transition-colors">
+    <NavLink to="/" className="text-gray-600 ">
       <li>Home</li>
     </NavLink>
     <NavLink to="/about" className="text-gray-600  transition-colors">
