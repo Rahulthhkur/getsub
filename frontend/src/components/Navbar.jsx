@@ -51,12 +51,12 @@ const Navbar = () => {
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-      {/* Logo with mobile margin */}
-      <Link to="/" aria-label="Home" className="sm:mr-0 mr-auto">
-        <img src={assets.logo} className="w-48" alt="Logo" />
+      {/* Logo with responsive size */}
+      <Link to="/" aria-label="Home" className="flex-shrink-0">
+        <img src={assets.logo} className="w-32 sm:w-48" alt="Logo" />
       </Link>
 
-      {/* Desktop Menu */}
+      {/* Rest of the navbar code remains the same... */}
       <ul className="hidden sm:flex gap-5 text-base text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
@@ -82,8 +82,8 @@ const Navbar = () => {
         </NavLink>
       </ul>
 
-      {/* Right Icons - Added mobile spacing */}
-      <div className="flex items-center gap-6 sm:ml-0 ml-6">
+      {/* Right Icons */}
+      <div className="flex items-center gap-6 sm:gap-6 ml-auto sm:ml-0">
         {/* Search */}
         <img
           onClick={() => setshowSearch(true)}
@@ -94,7 +94,7 @@ const Navbar = () => {
         />
 
         {/* Profile */}
-        <div className="group relative">
+        <div className="group relative flex-shrink-0">
           <img
             onClick={() => (token ? null : navigate("/login"))}
             src={assets.profile_icon}
@@ -102,22 +102,24 @@ const Navbar = () => {
             alt="Profile Icon"
             aria-label="Profile"
           />
-            {token && (<div className="absolute hidden group-hover:block dropdown-menu right-0 pt-4 z-50">
-              <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                <p className="cursor-pointer hover:text-black">My Profile</p>
-                <p onClick={()=> navigate('/order')} className="cursor-pointer hover:text-black">Orders</p>
+          {token && (
+            <div className="absolute hidden group-hover:block dropdown-menu right-0 pt-4 z-50">
+              <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded shadow-lg">
+                <p className="cursor-pointer hover:text-black whitespace-nowrap">My Profile</p>
+                <p onClick={()=> navigate('/order')} className="cursor-pointer hover:text-black whitespace-nowrap">Orders</p>
                 <p
                   onClick={logout}
-                  className="cursor-pointer hover:text-black"
+                  className="cursor-pointer hover:text-black whitespace-nowrap"
                 >
                   Logout
                 </p>
               </div>
-            </div>)}
+            </div>
+          )}
         </div>
 
         {/* Cart */}
-        <Link to="/cart" className="relative" aria-label="Cart">
+        <Link to="/cart" className="relative flex-shrink-0" aria-label="Cart">
           <img src={assets.cart_icon} className="w-5 min-w-5" alt="Cart Icon" />
           <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
             {getCartCount()}
@@ -128,7 +130,7 @@ const Navbar = () => {
         <img
           onClick={() => setVisible(true)}
           src={assets.menu_icon}
-          className="w-5 cursor-pointer sm:hidden"
+          className="w-5 cursor-pointer sm:hidden flex-shrink-0"
           alt="Menu Icon"
           aria-label="Menu"
         />
