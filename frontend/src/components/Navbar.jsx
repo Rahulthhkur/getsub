@@ -50,6 +50,7 @@ const Navbar = () => {
   );
 
   return (
+    <div className="sticky top-0 z-50 bg-white shadow-transparent"> {/* Added sticky, top-0, z-50, and bg-white */}
     <div className="flex items-center justify-between py-5 font-medium">
       {/* Logo with responsive size */}
       <Link to="/" aria-label="Home" className="flex-shrink-0">
@@ -221,6 +222,7 @@ const Navbar = () => {
           </NavLink>
         </div>
       </div>
+    </div>
     </div>
   );
 };
