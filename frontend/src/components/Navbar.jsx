@@ -51,8 +51,8 @@ const Navbar = () => {
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-      {/* Logo */}
-      <Link to="/" aria-label="Home">
+      {/* Logo with mobile margin */}
+      <Link to="/" aria-label="Home" className="sm:mr-0 mr-auto">
         <img src={assets.logo} className="w-48" alt="Logo" />
       </Link>
 
@@ -82,8 +82,8 @@ const Navbar = () => {
         </NavLink>
       </ul>
 
-      {/* Right Icons */}
-      <div className="flex items-center gap-6">
+      {/* Right Icons - Added mobile spacing */}
+      <div className="flex items-center gap-6 sm:ml-0 ml-6">
         {/* Search */}
         <img
           onClick={() => setshowSearch(true)}
@@ -114,7 +114,6 @@ const Navbar = () => {
                 </p>
               </div>
             </div>)}
-    
         </div>
 
         {/* Cart */}
